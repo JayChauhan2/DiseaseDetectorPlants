@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block body %}
+<h1 class="page-title">Plant MLC</h1>
+
+<p class="subheading">Using machine learning to cure plant diseases</p>
+<section class="section" id="farm-crops">
+<h2>Diseases Covered - Farm Crops</h2>
+<div class="columns">
+    <div class="column">
+        <div>
+            <h5>Furasium Wilt</h5>
+            <p>{{farmCrops[0]}}</p>
+        </div>
+        <div>
+            <h5>Leaf Blight</h5>
+            <p>{{farmCrops[1]}}</p>
+        </div>
+        <div>
+            <h5>Potato Blight - Early</h5>
+            <p>{{farmCrops[2]}}</p>
+        </div>
+        <div>
+            <h5>Potato Blight - Late</h5>
+            <p>{{farmCrops[3]}}</p>
+        </div>
+        <div>
+            <h5>Anthracnose</h5>
+            <p>{{farmCrops[4]}}</p>
+        </div>
+    </div>
+    <div class="column">
+        <div>
+            <h5>Bacterial Blight</h5>
+            <p>{{farmCrops[5]}}</p>
+        </div>
+        <div>
+            <h5>Leaf Smut</h5>
+            <p>{{farmCrops[6]}}</p>
+        </div>
+        <div>
+            <h5>Nematode</h5>
+            <p>{{farmCrops[7]}}</p>
+        </div>
+        <div>
+            <h5>Leaf Mold</h5>
+            <p>{{farmCrops[8]}}</p>
+        </div>
+        <div>
+            <h5>Leaf Scorch</h5>
+            <p>{{farmCrops[9]}}</p>
+        </div>
+    </div>
+    <div class="column">
+        <div>
+            <h5>Common Rust</h5>
+            <p>{{farmCrops[10]}}</p>
+        </div>
+        <div>
+            <h5>Blight</strong></h5>
+            <p>{{farmCrops[11]}}</p>
+        </div>
+        <div>
+            <h5>Bacterial Spot</h5>
+            <p>{{farmCrops[12]}}</p>
+        </div>
+        <div>
+            <h5>Black Measles</h5>
+            <p>{{farmCrops[13]}}</p>
+        </div>
+        <div>
+            <h5>Two-spotted spider mite</h5>
+            <p>{{farmCrops[14]}}</p>
+        </div>
+    </div>
+</div>
+</section>
+<section class="section" id="home-plants">
+<h2>Diseases Covered - Home Plants</h2>
+<div class="columns">
+    <div class="column">
+        <div>
+            <h5>Banana Bush Scorch</h5>
+            <p>{{homePlants[0]}}</p>
+        </div>
+        <div>
+            <h5>Powdery Mildew</h5>
+            <p>{{homePlants[1]}}</p>
+        </div>
+        <div>
+            <h5>Rust Plant Disease</h5>
+            <p>{{homePlants[2]}}</p>
+        </div>
+    </div>
+    <div class="column">
+        <div>
+            <h5>Hibiscus Blight</h5>
+            <p>{{homePlants[3]}}</p>
+        </div>
+        <div>
+            <h5>Night Flowering Jasmine Red Spot</h5>
+            <p>{{homePlants[4]}}</p>
+        </div>
+        <div>
+            <h5>Rose Blight</h5>
+            <p>{{homePlants[5]}}</p>
+        </div>
+    </div>
+</div>
+</section>
+
+{% endblock %}

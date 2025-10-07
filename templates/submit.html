@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Submit
+{% endblock %}
+
+{% block body %}
+{% if form %}
+
+{% if type == 0 %}
+<h1 class="page-title">Upload a Picture - Home Plants</h1>
+{% elif type == 1 %}
+<h1 class="page-title">Upload a Picture - Farm Crops</h1>
+{% endif %}
+
+<form class="p-3" action="/submit/{{type}}", method="POST" enctype="multipart/form-data">
+    {{ form.csrf_token }} <!--Prevents malicious requests-->
+    <input class="form-control" type="file" name = "imageUpload" accept="image/*">
+    <p class="center-block">
+    <button class="btn btn-primary mt-3" type="submit">Identify</button>
+    </p>
+</form>
+{% endif %}
+{% endblock %}

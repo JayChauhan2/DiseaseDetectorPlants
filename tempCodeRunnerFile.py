@@ -1,0 +1,1 @@
+return [class_name[2:], round(confidence_score * 100, 2)]

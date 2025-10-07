@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{prediction[0]}}
+{% endblock %}
+
+{% block body %}
+{% set c_score = prediction[1] %}
+{% set pDisease = prediction[0] %}
+<div class="text-center">
+    <br><br><br><br>
+    <div class="results-container">
+        <h2>Your plant likely has <i>{{pDisease}}</i></h2>
+        
+        <p><img src="{{ img_path }}" alt="Plant Image"></p>
+        <p><strong>Crop:</strong> {{pDisease[:pDisease.index(" ", 1)]}}</p>
+        <p><strong>Confidence Level:</strong> {{ c_score | string() + '%' }}</p>
+        <hr>
+        <p><strong>Summary:</strong></p>
+        <p>{{summary | safe}}</p>
+        <hr>
+        <p><strong>Learn More!</strong></p>
+        <br>
+        <div class="source-links container">
+            {% for link in website_links %}
+            <p><a class="rounded source-link " href = "{{ link }}" target="_blank">Source {{loop.index}}</a></p>
+            {% endfor %}
+            </div>
+    </div>
+</div>
+
+{% endblock %}
+

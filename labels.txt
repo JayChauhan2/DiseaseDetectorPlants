@@ -1,0 +1,15 @@
+0 Potato Early Blight
+1 Potato Late Blight
+2 Banana Fusarium Wilt
+3 Wheat Leaf Blight
+4 Mango Anthracnose
+5 Cotton Bacterial Blight
+6 Rice Leaf Smut
+7 Potato Nematode
+8 Corn Common Rust
+9 Corn Blight
+10 Tomato Two Spotted Spider Mite
+11 Grape Black Measles
+12 Bell Pepper Bacterial Spot
+13 Tomato Leaf Mold
+14 Strawberry Leaf Scorch

@@ -1,0 +1,6 @@
+0 Banana Bush Scorch
+1 Powdery Mildew
+2 Rust Disease
+3 Hibiscus Blight
+4 Night Flowering Jasmine Red Spot
+5 Rose Blight
