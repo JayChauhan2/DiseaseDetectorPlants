@@ -236,6 +236,8 @@ def predict(path, type):
     # model prediction
     prediction = model.predict(data)
     index = np.argmax(prediction)
+    class_name = class_names[index]
+    confidence_score = prediction[0][index]
     return [class_name[2:].strip(), round(float(confidence_score) * 100, 2)] #class and confidence_score
 
 if __name__ == '__main__':
