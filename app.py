@@ -3,7 +3,10 @@ import os
 from dotenv import load_dotenv
 import requests
 from groq import Groq
-from keras.models import load_model
+try:
+    from tf_keras.models import load_model
+except ImportError:
+    from keras.models import load_model
 from PIL import Image, ImageOps
 import numpy as np
 from flask import Flask, render_template, redirect, url_for, request, session
@@ -155,22 +158,25 @@ def createLLMResponse(inp, num):
 
 
 def getCredibleSources(query):
-    url = 'https://www.googleapis.com/customsearch/v1'
-    search_params = {
-        'q': ("How to cure " + query), # the words it searches
-        'key': searchApiKey, # api key for authentication
-        'cx' : searchEngineId, # search engine to use
-        'num' : 5, #number of results
-        'siteSearch' : 'edu',
-    }
-    response = requests.get(url, params=search_params)
-    results = response.json()['items']
-    
-    links = []
-    for result in results:
-        links.append(result['link']) # accesses the link
+    try:
+        url = 'https://www.googleapis.com/customsearch/v1'
+        search_params = {
+            'q': ("How to cure " + query), # the words it searches
+            'key': searchApiKey, # api key for authentication
+            'cx' : searchEngineId, # search engine to use
+            'num' : 5, #number of results
+            'siteSearch' : 'edu',
+        }
+        response = requests.get(url, params=search_params)
+        results = response.json().get('items', [])
         
-    return links
+        links = []
+        for result in results:
+            links.append(result['link']) # accesses the link
+            
+        return links
+    except Exception:
+        return []
 
 def predict(path, type):
     
@@ -205,7 +211,7 @@ def predict(path, type):
     class_name = class_names[index]
     confidence_score = prediction[0][index]
 
-    return [class_name[2:], round(confidence_score * 100, 2)] #class and confidence_score
+    return [class_name[2:], round(float(confidence_score) * 100, 2)] #class and confidence_score
 
 if __name__ == '__main__':
     app.run(debug=True) #runs the app
