@@ -6,7 +6,7 @@
 
 ## 🏆 Awards & Recognition
 
-* 🥇 **Winner – World AI Competition for Youth (2025)**  
+* 🌐 **Global Finalist – World AI Competition for Youth (2025)**  
   Recognized as a **Top 2% Global Finalist** out of **29,000+ submissions** worldwide.
 
 * 🥉 **3rd Place – Virginia Technology Student Association (TSA)**  
